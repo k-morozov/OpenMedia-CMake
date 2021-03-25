@@ -12,3 +12,7 @@ target_include_directories(someExe
         )
 
 target_link_libraries(someExe PUBLIC someLib)
+
+if (NOT WIN32)
+    install(TARGETS someExe RUNTIME DESTINATION bin)
+endif()
