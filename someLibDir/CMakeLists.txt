@@ -8,3 +8,11 @@ set_target_properties(someLib PROPERTIES
 )
 
 target_include_directories(someLib PUBLIC ${CMAKE_SOURCE_DIR})
+target_compile_options(someLib PRIVATE
+        -Wall
+        -Wextra
+        -Wpedantic
+        -Werror
+)
+
+target_link_libraries(someLib project_warnings)

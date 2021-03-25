@@ -20,4 +20,11 @@ include_directories(${CONAN_INCLUDE_DIRS_GTEST})
 
 target_link_libraries(${APP_TEST} ${CONAN_LIBS_GTEST})
 
+target_compile_options(${APP_TEST} PRIVATE
+        -Wall
+        -Wextra
+        -Wpedantic
+        -Werror
+)
+
 add_test(NAME ${APP_TEST} COMMAND $<TARGET_FILE:${APP_TEST}>)
